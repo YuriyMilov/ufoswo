@@ -1,0 +1,120 @@
+package qq;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.Date;
+import javax.jdo.PersistenceManager;
+
+import javax.jdo.Query;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.google.appengine.api.users.User;
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
+import java.util.List;
+
+public class q extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
+		UserService userService = UserServiceFactory.getUserService();
+		User user = userService.getCurrentUser();
+		PrintWriter out = resp.getWriter();
+		String s = "qq";
+		
+	//	Runtime.getRuntime().exec("cmd /c start qq.bat");
+
+
+/*
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		String q = "select from wwo.Weborder" //+ Weborder.class.getName()
+		+ " where customer == '" + user.getNickname() + "' && impex==null "+ " order by date";
+		//String q = "select from " + Weborder.class.getName()
+		//+ " order by date";
+
+		List<Weborder> r = (List<Weborder>) pm.newQuery(q).execute();
+		//for (int i = 0; i < r.size(); i++)
+		//	s = s + r.get(i).getUser().getNickname() + " <br>\r\n";
+		
+		if(r.size()>0)
+			s = r.get(0).getUser().getNickname();*/
+
+		out.println(s);
+	}
+
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+			throws IOException {
+		PrintWriter out = resp.getWriter();
+		String s = "", ss = "", sq = "";
+		UserService userService = UserServiceFactory.getUserService();
+		User user = userService.getCurrentUser();
+
+		String customer_name = user.getNickname();
+		String company_name = req.getParameter("TextBox1");
+		String address1 = req.getParameter("TextBox2");
+		String address2 = req.getParameter("TextBox3");
+		String city = req.getParameter("TextBox4");
+		String prov_state = req.getParameter("DropDownList2");
+		String postal_code = req.getParameter("TextBox6");
+		String country = req.getParameter("DropDownList1");
+		String contact = req.getParameter("TextBox8");
+		String phone = req.getParameter("TextBox9");
+
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+		Shipper ns = new Shipper(user, new Date(), customer_name, company_name,
+				address1, address2, city, prov_state, postal_code, country,
+				contact, phone);
+
+		pm.makePersistent(ns);
+
+		/*
+		 * //sq = "select from " + Shipper.class.getName() +
+		 * " where lastName == 'Smith'"; sq = "select from " +
+		 * Shipper.class.getName();
+		 * 
+		 * List<Shipper> slist = (List<Shipper>) pm.newQuery(sq).execute();
+		 * 
+		 * // s=shta.rff("1.txt"); int i=0; if(!slist.isEmpty()) i=slist.size();
+		 * while(i-- >0) ss = ss+slist.get(i).get_country()+"<br>";
+		 */
+
+		s = "Customer: " + customer_name + "\r\nCompany name: " + company_name
+				+ "\r\nAddress: " + address1 + " " + address2 + "\r\nCity: "
+				+ city + "\r\nProv/State: " + prov_state + "\r\nPostal code: "
+				+ postal_code + "\r\nCountry: " + country + "\r\nContact: "
+				+ contact + "\r\nPhone: " + phone;
+
+		s = shta.send_mail("weborder@quicklydone.com", "new shipper", s);
+		out.println(s + shta.rff("1.txt"));
+
+	}
+	
+	public String get_table(String table) {
+
+		String s = "", sa = "";
+		try {
+			Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			Connection conn = DriverManager.getConnection("jdbc:odbc:dbFox");
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM \"" + table
+					+ ".dbf\"");
+			while (rs.next())
+				s = s + rs.getObject(2).toString().trim() + "  "
+						+ rs.getObject(3).toString().trim() + "<br>";
+			sa = s;
+
+		} catch (Exception e) {
+			sa = e.toString();
+		}
+
+		return s;
+	}
+
+}

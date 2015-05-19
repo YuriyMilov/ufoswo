@@ -1,0 +1,100 @@
+<Document>
+	<DocumentId>
+		<DateTime>_DateTime_</DateTime>
+		<UniqueRefNb>_UniqueRefNb_</UniqueRefNb>
+	</DocumentId>
+	<Customer>
+		<Descr>_CustomerDescr_</Descr>
+	</Customer>
+
+	<PurchaseOrder>
+		<Header>
+
+			<PurchaseBookNb>_PurchaseBookNb_</PurchaseBookNb>
+			<PurchaseOrderNb>_PurchaseOrderNb_</PurchaseOrderNb>
+			<RequestedShippingDate>_RequestedShippingDate_
+			</RequestedShippingDate>
+			<RequestedShippingTime>_RequestedShippingTime_
+			</RequestedShippingTime>
+			<RequestedDeliveryDate>_RequestedDeliveryDate_
+			</RequestedDeliveryDate>
+			<RequestedDeliveryTime>_RequestedDeliveryTime_
+			</RequestedDeliveryTime>
+
+			<TotalWeight></TotalWeight>
+			<TotalQty>
+				<Value>_TotalQtyValue_</Value>
+				<Uom>_TotalQtyUom_</Uom>
+			</TotalQty>
+
+			<Equipment>_Equipment_</Equipment>
+
+			<Special_instructions><![CDATA[_Special_instructions_]]></Special_instructions>
+
+			<Customer>
+				<CustomerAccPac>_CustomerAccPac_</CustomerAccPac>
+			</Customer>
+
+			<Consignee>
+				<Company>
+					<Name>_cName_</Name>
+					<Address1>_cAddress1_</Address1>
+					<Address2>_cAddress2_</Address2>
+					<City>_cCity_</City>
+					<StateProv>_cStateProv_</StateProv>
+					<ZipPc>_cZipPc_</ZipPc>
+					<Country>_cCountry_</Country>
+					<Phone>_cPhone_</Phone>
+					<Fax>_cFax_</Fax>
+				</Company>
+				<Contact>
+					<ContactName>_cContactName_</ContactName>
+					<Phone>_cContactPhone_</Phone>
+				</Contact>
+			</Consignee>
+
+			<Shipper>
+				<Company>
+					<Name>_sName_</Name>
+					<Address1>_sAddress1_</Address1>
+					<Address2>_sAddress2_</Address2>
+					<City>_sCity_</City>
+					<StateProv>_sStateProv_</StateProv>
+					<ZipPc>_sZipPc_</ZipPc>
+					<Country>_sCountry_</Country>
+					<Phone>_sPhone_</Phone>
+					<Fax>_sFax_</Fax>
+				</Company>
+				<Contact>
+					<ContactName>_sContactName_</ContactName>
+					<Phone>_sContactPhone_</Phone>
+				</Contact>
+			</Shipper>
+
+			<Carrier>
+				<CarrierAccPac>_CarrierAccPac_</CarrierAccPac>
+			</Carrier>
+			<Comment>_HeaderComment_</Comment>
+			<BOL>_BOL_</BOL>
+			<ContainerId>_ContainerId_</ContainerId>
+		</Header>
+
+
+		<Item>
+			<LineNb>1</LineNb>
+			<Qty>
+				<Value>0</Value>
+				<Uom></Uom>
+			</Qty>
+			<ProductCode></ProductCode>
+			<ProductDesc>_Product Description_</ProductDesc>
+			<Weight>
+				<Value>_TotalWeight_</Value>
+				<Uom>_ItemWeightUom_</Uom>
+			</Weight>
+			<Allocation></Allocation>
+			<Cost_centre></Cost_centre>
+		</Item>
+
+	</PurchaseOrder>
+</Document>

@@ -1,0 +1,30 @@
+﻿25.3731,65.3171, ii, Finland,, This is my favourite placename for testing geocoders., "Easy to remember, quick to type.",I wonder if there are significantly shorter placenames anywhere in the World.
+
+19.04076, 47.49840, i, Budapest, Hungary, probably meaning number one.
+
+19.04494, 47.54164, iii, III. kerület, Budapest, Hungary, probably meaning number three.
+
+130.98015, -12.74114, iiii, Iiii Rd, Berry Springs NT 0838, Australia,"Zoom close, it really is a road name."
+
+176.54014,-40.345969, Taumat, New Zealand , Local people often call it Taumata, "Why? What is wrong with the original name."
+
+-9.565904,53.337664, Muckana, Co. Galway, Republic of Ireland,, This is the place where all the drunken Irish sailors say they come from.
+
+-120.232005,47.025128,Whiskey Dick Mountain, United States,What are they doing there?, There is not very clear satellite imagery of that area.
+
+12.866111,48.065753,Fucking, 5121 Tarsdorf, Austria,  Somebody should tell them to change the name.
+
+-76.822701,39.531451,Boring, Maryland, USA, ,Not going to move there.
+
+-82.461926,34.816764,Welcome, South Carolina, USA, ,Nice people there.
+
+-81.415878,28.30464,Kissimmee, FL, USA, Very nice people there.
+
+-88.986226,37.186483,Monkeys Eyebrow, Kentucky, USA, A common placename.
+
+
+-96.29274,29.747734, Mario's Flying Pizza, United States of America, I think this has leaked from Local Search., Or it been added by some extra terrestials., Probably from Mars.,Even they don't use saucers anymore.
+
+
+
+
